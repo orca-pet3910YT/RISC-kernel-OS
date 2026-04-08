@@ -23,7 +23,7 @@ build/bootImage.elf: $(OBJS) | build
 	@ld.lld -flavor gnu -m elf64lriscv $(OBJS) -o build/bootImage.elf -T kernel.ld
 
 qemu:
-	@qemu-system-riscv64 -machine virt -bios default -kernel build/bootImage.elf -serial stdio -smp 1 -m 16M -s
+	@qemu-system-riscv64 -machine virt -bios default -kernel build/bootImage.elf -serial stdio -smp 1 -m 128M -s
 
 clean:
 	@echo "Cleaning build/"

@@ -3,7 +3,7 @@
 .section .text
 .globl _start
 _start:
-	la x2, stack_top # load the stack
+	la sp, stack_top # load the stack
 	#la x3, __global_pointer$
 	call kmain
 hang:
@@ -16,6 +16,7 @@ hang:
 
 .section .bss
 .align 16
+.space 4096
 stack:
 	.space 16384
 stack_top:
