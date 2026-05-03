@@ -6,8 +6,7 @@
 _start:
 	la sp, _stack_top
 	addi sp, sp, -16
-	csrr a0, mhartid
-	bnez a0, hang
+	bne x0, a0, hang
 	sd ra, 8(sp)
 	call kmain
 	ld ra, 8(sp)
